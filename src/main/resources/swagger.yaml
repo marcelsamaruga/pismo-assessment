@@ -1,0 +1,98 @@
+openapi: 3.0.1
+info:
+  title: Pismo Assessment
+  description: The api is an assessment to join Pismo.
+  version: 1.0.0
+tags:
+  - name: pismo assessment accounts transactions
+paths:
+  /accounts:
+    get:
+      operationId: getAccountDetails
+      summary: To retrieve account details
+      responses:
+        '200':
+          description: Accounts Details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDto'
+        '400':
+          description: Invalid Account
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorHandlerDto'
+        '404':
+          description: An error has happened
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorHandlerDto'
+    post:
+      operationId: createAccount
+      summary: To create a new account
+      responses:
+        '201':
+          description: Account Created
+        '500':
+          description: An error has happened
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorHandlerDto'
+  /transactions:
+    post:
+      operationId: createTransactionAccount
+      summary: To create a new transaction for an account
+      parameters:
+        - in: body
+          name: account_id
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - in: body
+          name: operation_type_id
+          required: true
+          schema:
+            type: integer
+        - in: body
+          name: amount
+          required: true
+          schema:
+            type: number
+            format: double
+      responses:
+        '201':
+          description: Transaction Operation Created
+        '500':
+          description: An error has happened
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorHandlerDto'
+
+
+components:
+  schemas:
+    ErrorHandlerDto:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 999999999
+          format: int64
+        message:
+          type: string
+          example: An error has happened getting account details
+    AccountDto:
+      type: object
+      properties:
+        account_id:
+          type: integer
+          format: int64
+          example: 1
+        document_number:
+          type: string
+          example: 12345678900
