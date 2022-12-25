@@ -4,11 +4,11 @@
 
 function run_app
 {
-	if [ ! -d "texo-assessment" ]; then
-	  	git clone https://github.com/marcelsamaruga/texo-assessment.git
+	if [ ! -d "pismo-assessment" ]; then
+	  	git clone https://github.com/marcelsamaruga/pismo-assessment.git
 	fi
 
-	cd "texo-assessment"
+	cd "pismo-assessment"
 
 	chmod 777 mvnw
 
@@ -22,11 +22,11 @@ function run_app
 
 function run_integration_tests
 {
-	if [ ! -d "texo-assessment" ]; then
-	  	git clone https://github.com/marcelsamaruga/texo-assessment.git
+	if [ ! -d "pismo-assessment" ]; then
+	  	git clone https://github.com/marcelsamaruga/pismo-assessment.git
 	fi
 
-	cd "texo-assessment"
+	cd "pismo-assessment"
 	
 	chmod 777 mvnw
 
@@ -40,7 +40,7 @@ function run_integration_tests
 #########################################################################################
 
 
-printf "\n#### Texo Assessment ####"
+printf "\n#### Pismo Assessment ####"
 
 printf "  \n1) Run App"
 printf "  \n2) Run Integration Tests"
