@@ -21,7 +21,8 @@
 		<lombok.version>1.18.24</lombok.version>
 		<lombok.mapstruct.version>0.2.0</lombok.mapstruct.version>
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
-		<swagger.version>3.0.0</swagger.version>
+		<openapi.version>1.6.14</openapi.version>
+		<rest-assured.version>4.3.0</rest-assured.version>
 	</properties>
 
 	<dependencies>
@@ -37,7 +38,7 @@
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
-			<version>1.4.2.Final</version>
+			<version>${mapstruct.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
@@ -63,7 +64,7 @@
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured-all</artifactId>
-			<version>4.3.0</version>
+			<version>${rest-assured.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -75,7 +76,7 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.14</version>
+			<version>${openapi.version}</version>
 		</dependency>
 	</dependencies>
 
